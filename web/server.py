@@ -2,9 +2,9 @@ from flask import Flask,render_template, request, session, Response, redirect
 from database import connector
 from model import entities
 from sqlalchemy import or_, and_
-import json
 import time
 import datetime
+import json
 from operator import  itemgetter,attrgetter
 
 db = connector.Manager()

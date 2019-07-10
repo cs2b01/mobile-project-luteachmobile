@@ -25,7 +25,7 @@ class Learn(connector.Manager.Base):
     __tablename__ = 'learn'
     id = Column(Integer, Sequence('learn_id_seq'), primary_key=True)
     user_from_id = Column(Integer, ForeignKey('users.id'))
-    user_from_name = Column(String(50), ForeignKey('users.name'))
+    user_from_name = Column(String(50), ForeignKey('users.username'))
     Tema  = Column(String(500))
     Curso = Column(String(500))
     Lugar = Column(String(500))
@@ -36,8 +36,7 @@ class Teach(connector.Manager.Base):
     __tablename__='teach'
     id = Column(Integer, Sequence('teach_id_seq'), primary_key=True)
     user_from_id_t = Column(Integer, ForeignKey('users.id'))
-    name_t = Column(String(50), ForeignKey('users.name'))
-    fullname_t = Column(String(50), ForeignKey('users.fullname'))
+    name_t = Column(String(50), ForeignKey('users.username'))
     HoraEnviado = Column(default=datetime.datetime.now())
     Curso_t = Column(String(50))
 
