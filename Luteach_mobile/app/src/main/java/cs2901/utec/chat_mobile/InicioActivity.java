@@ -18,10 +18,14 @@ public class InicioActivity extends AppCompatActivity {
 
     public void LearnClicked(View view) {
         Intent intent = new Intent(getActivity(), LearnActivity.class);
+        intent.putExtra("user_id", getIntent().getExtras().get("user_id").toString());
+        intent.putExtra("username", getIntent().getExtras().get("username").toString());
         startActivity(intent);
     }
     public void TeachClicked(View view) {
         Intent intent = new Intent(getActivity(), TeachActivity.class);
+        intent.putExtra("user_id", getIntent().getExtras().get("user_id").toString());
+        intent.putExtra("username", getIntent().getExtras().get("username").toString());
         startActivity(intent);
     }
 }

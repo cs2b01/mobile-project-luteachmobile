@@ -35,6 +35,8 @@ public class LearnActivity extends AppCompatActivity {
     public void ClickSend(View v) {
         postLearn();
         Intent intent = new Intent(getActivity(), MenuActivity.class);
+        intent.putExtra("user_id", getIntent().getExtras().get("user_id").toString());
+        intent.putExtra("username", getIntent().getExtras().get("username").toString());
         startActivity(intent);
     }
 
@@ -42,8 +44,8 @@ public class LearnActivity extends AppCompatActivity {
         String url = "http://10.0.2.2:5000/postLearn";
         RequestQueue queue = Volley.newRequestQueue(this);
         Map<String, String> params = new HashMap();
-        final String user_from_id = getIntent().getExtras().get("user_from_id").toString();
-        final String user_from_name = getIntent().getExtras().get("user_from_name").toString();
+        final String user_from_id = getIntent().getExtras().get("user_id").toString();
+        final String user_from_name = getIntent().getExtras().get("username").toString();
         final String Tema = ((EditText)findViewById(R.id.txtTema)).getText().toString();
         final String Curso = ((EditText)findViewById(R.id.txtCurso)).getText().toString();
         final String Lugar = ((EditText)findViewById(R.id.txtLugar)).getText().toString();

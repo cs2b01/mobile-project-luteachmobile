@@ -30,7 +30,7 @@ public class ClasesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clases);
         mRecyclerView = findViewById(R.id.clases_recycler_view);
-        setTitle("@"+getIntent().getExtras().get("user_from_name").toString());
+        setTitle("@"+getIntent().getExtras().get("username").toString());
     }
 
     @Override
@@ -49,7 +49,7 @@ public class ClasesActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         Map<String, String> params = new HashMap();
         JSONObject parameters = new JSONObject(params);
-        final String userId = getIntent().getExtras().get("user_from_id").toString();
+        final String userId = getIntent().getExtras().get("user_id").toString();
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET,
                 url,

@@ -32,6 +32,8 @@ public class TeachActivity extends AppCompatActivity {
     public void ClickEnviar(View v) {
         postTeach();
         Intent intent = new Intent(getActivity(), MenuActivity.class);
+        intent.putExtra("user_id", getIntent().getExtras().get("user_id").toString());
+        intent.putExtra("username", getIntent().getExtras().get("username").toString());
         startActivity(intent);
     }
 
@@ -39,7 +41,7 @@ public class TeachActivity extends AppCompatActivity {
         String url = "http://10.0.2.2:5000/postTeach";
         RequestQueue queue = Volley.newRequestQueue(this);
         Map<String, String> params = new HashMap();
-        final String user_from_id = getIntent().getExtras().get("user_from_id_t").toString();
+        final String user_from_id = getIntent().getExtras().get("user_id").toString();
         final String Curso = ((EditText)findViewById(R.id.txtCurso_t)).getText().toString();
         params.put("user_from_id_t", user_from_id);
         params.put("curso_t", Curso);

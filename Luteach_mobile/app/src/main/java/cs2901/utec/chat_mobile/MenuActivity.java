@@ -20,14 +20,20 @@ public class MenuActivity extends AppCompatActivity {
 
     public void InicioClicked(View view) {
         Intent intent = new Intent(getActivity(), InicioActivity.class);
+        intent.putExtra("user_id", getIntent().getExtras().get("user_id").toString());
+        intent.putExtra("username", getIntent().getExtras().get("username").toString());
         startActivity(intent);
     }
     public void ProfesoresClicked(View view) {
         Intent intent = new Intent(getActivity(), ProfesoresActivity.class);
+        intent.putExtra("user_id", getIntent().getExtras().get("user_id").toString());
+        intent.putExtra("username", getIntent().getExtras().get("username").toString());
         startActivity(intent);
     }
     public void ClasesClicked(View view) {
         Intent intent = new Intent(getActivity(), ClasesActivity.class);
+        intent.putExtra("user_id", getIntent().getExtras().get("user_id").toString());
+        intent.putExtra("username", getIntent().getExtras().get("username").toString());
         startActivity(intent);
     }
     public void AboutClicked(View view) {
@@ -40,6 +46,8 @@ public class MenuActivity extends AppCompatActivity {
     }
     public void ContactsClicked(View view) {
         Intent intent = new Intent(getActivity(), ContactsActivity.class);
+        intent.putExtra("user_id", getIntent().getExtras().get("user_id").toString());
+        intent.putExtra("username", getIntent().getExtras().get("username").toString());
         startActivity(intent);
     }
 }
